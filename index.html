@@ -5,75 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Somnicide Studios - Coming Soon</title>
   <style>
+    /* --- Global Styles --- */
     body {
-      background-color: #121212;
+      background-color: #121212; /* Charcoal Black */
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      min-height: 100vh;
+      height: 100vh;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      color: #00C2FF; /* Bright Sky Blue */
       text-align: center;
-      color: #00C2FF;
     }
+    
     h1 {
       font-size: 4rem;
-      margin-bottom: 20px;
       color: #00C2FF;
-      letter-spacing: 2px;
+      margin-bottom: 20px;
     }
+
     p {
       font-size: 1.5rem;
+      color: #7C00C9; /* Velvet Purple */
       max-width: 600px;
-      margin-bottom: 60px;
-      color: #7C00C9;
+      margin: 0 20px;
     }
+
+    /* --- Decorations (minimal) --- */
     .decorations {
       position: absolute;
       width: 100%;
       height: 100%;
       pointer-events: none;
-      overflow: hidden;
       z-index: 0;
     }
+
     .circle {
       position: absolute;
       border-radius: 50%;
-      opacity: 0.15;
+      opacity: 0.1;
       animation: float 10s infinite ease-in-out alternate;
     }
+
     .circle.blue {
       background-color: #00C2FF;
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       top: 10%;
-      left: 20%;
+      left: 15%;
     }
+
     .circle.yellow {
       background-color: #FFD93D;
       width: 100px;
       height: 100px;
-      top: 70%;
-      left: 10%;
+      bottom: 20%;
+      right: 15%;
     }
+
     .circle.purple {
       background-color: #7C00C9;
       width: 120px;
       height: 120px;
-      top: 30%;
-      right: 15%;
+      top: 40%;
+      right: 25%;
     }
+
     @keyframes float {
       0% { transform: translateY(0px);}
       100% { transform: translateY(-20px);}
     }
-    .content {
-      position: relative;
-      z-index: 1;
-    }
+
+    /* --- Hamster Easter Egg --- */
     .hamster {
       position: absolute;
       bottom: 20px;
@@ -81,45 +87,80 @@
       width: 60px;
       height: 60px;
       opacity: 0.4;
-      z-index: 2;
+      transition: opacity 0.3s ease, filter 0.3s ease;
+      z-index: 1;
       cursor: pointer;
-      transition: filter 0.3s ease, opacity 0.3s ease;
     }
+
     .hamster svg {
       width: 100%;
       height: 100%;
-      stroke: #FFD93D;
+      stroke: #FFD93D; /* Golden Popcorn Yellow */
       stroke-width: 2;
       fill: none;
     }
+
     .hamster.glowing {
       opacity: 0.8;
-      filter: drop-shadow(0 0 5px #FFD93D);
+      filter: drop-shadow(0 0 8px #FFD93D);
     }
   </style>
 </head>
 <body>
 
+  <!-- Decorations -->
   <div class="decorations">
     <div class="circle blue"></div>
     <div class="circle yellow"></div>
     <div class="circle purple"></div>
   </div>
 
-  <div class="content">
-    <h1>Coming Soon</h1>
-    <p>Our world is forming.<br>Stay tuned for something colorful, clever, and just a little strange.</p>
-  </div>
+  <!-- Main Content -->
+  <h1>Coming Soon</h1>
+  <p>Stay tuned for something colorful, clever, and a little strange.</p>
 
+  <!-- Hamster -->
   <div class="hamster" id="hamster">
-    <!-- Proper hamster outline as SVG -->
     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-      <!-- Hamster head and body outline -->
       <path d="M32 2 
                C24 4, 20 12, 20 20 
                C20 28, 26 30, 26 40 
                C26 50, 38 50, 38 40 
                C38 30, 44 28, 44 20 
                C44 12, 40 4, 32 2 Z" />
-      <!-- Left ear -->
-      <circle cx="24"
+      <circle cx="24" cy="10" r="3" />
+      <circle cx="40" cy="10" r="3" />
+      <circle cx="28" cy="48" r="2" />
+      <circle cx="36" cy="48" r="2" />
+    </svg>
+  </div>
+
+  <!-- Hamster Hover Script -->
+  <script>
+    const hamster = document.getElementById('hamster');
+    let floating = false;
+    let floatInterval = null;
+    let bottomPosition = 20; // Starting position
+
+    hamster.addEventListener('mouseenter', () => {
+      hamster.classList.add('glowing');
+      floating = true;
+      floatInterval = setInterval(() => {
+        if (floating) {
+          bottomPosition += 0.2; // Very slow upward movement
+          hamster.style.bottom = bottomPosition + 'px';
+        }
+      }, 50); // every 50ms
+    });
+
+    hamster.addEventListener('mouseleave', () => {
+      hamster.classList.remove('glowing');
+      floating = false;
+      clearInterval(floatInterval);
+      bottomPosition = 20;
+      hamster.style.bottom = bottomPosition + 'px';
+    });
+  </script>
+
+</body>
+</html>
