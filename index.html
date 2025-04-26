@@ -61,17 +61,17 @@
       position: absolute;
       bottom: 20px;
       right: 20px;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       opacity: 0.4;
       z-index: 2;
-      transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+      transition: transform 1s ease, filter 0.5s ease, opacity 0.5s ease;
       cursor: pointer;
     }
     .hamster:hover {
       opacity: 0.8;
       filter: drop-shadow(0 0 5px #FFD93D);
-      transform: scale(1.1);
+      transform: translateY(-20px) scale(1.15);
     }
     .hamster svg {
       width: 100%;
@@ -97,12 +97,23 @@
   </div>
 
   <div class="hamster">
-    <!-- Simple abstract hamster outline as SVG -->
+    <!-- Proper hamster outline as SVG -->
     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="32" cy="32" r="30" />
-      <circle cx="22" cy="22" r="5" />
-      <circle cx="42" cy="22" r="5" />
-      <path d="M20 42 C28 52, 36 52, 44 42" />
+      <!-- Hamster head and body outline -->
+      <path d="M32 2 
+               C24 4, 20 12, 20 20 
+               C20 28, 26 30, 26 40 
+               C26 50, 38 50, 38 40 
+               C38 30, 44 28, 44 20 
+               C44 12, 40 4, 32 2 Z" />
+      <!-- Left ear -->
+      <circle cx="24" cy="10" r="3" />
+      <!-- Right ear -->
+      <circle cx="40" cy="10" r="3" />
+      <!-- Left paw -->
+      <circle cx="28" cy="48" r="2" />
+      <!-- Right paw -->
+      <circle cx="36" cy="48" r="2" />
     </svg>
   </div>
 
