@@ -45,10 +45,27 @@
       opacity: 0.15;
       animation: float 10s infinite ease-in-out alternate;
     }
-    .circle.blue { background-color: #00C2FF; width: 200px; height: 200px; top: 10%; left: 20%; }
-    .circle.coral { background-color: #FF5E5B; width: 150px; height: 150px; bottom: 15%; right: 25%; }
-    .circle.yellow { background-color: #FFD93D; width: 100px; height: 100px; top: 70%; left: 10%; }
-    .circle.purple { background-color: #7C00C9; width: 120px; height: 120px; top: 30%; right: 15%; }
+    .circle.blue {
+      background-color: #00C2FF;
+      width: 200px;
+      height: 200px;
+      top: 10%;
+      left: 20%;
+    }
+    .circle.yellow {
+      background-color: #FFD93D;
+      width: 100px;
+      height: 100px;
+      top: 70%;
+      left: 10%;
+    }
+    .circle.purple {
+      background-color: #7C00C9;
+      width: 120px;
+      height: 120px;
+      top: 30%;
+      right: 15%;
+    }
     @keyframes float {
       0% { transform: translateY(0px);}
       100% { transform: translateY(-20px);}
@@ -65,8 +82,8 @@
       height: 60px;
       opacity: 0.4;
       z-index: 2;
-      transition: filter 0.3s ease, opacity 0.3s ease;
       cursor: pointer;
+      transition: filter 0.3s ease, opacity 0.3s ease;
     }
     .hamster svg {
       width: 100%;
@@ -75,13 +92,16 @@
       stroke-width: 2;
       fill: none;
     }
+    .hamster.glowing {
+      opacity: 0.8;
+      filter: drop-shadow(0 0 5px #FFD93D);
+    }
   </style>
 </head>
 <body>
 
   <div class="decorations">
     <div class="circle blue"></div>
-    <div class="circle coral"></div>
     <div class="circle yellow"></div>
     <div class="circle purple"></div>
   </div>
@@ -102,18 +122,4 @@
                C38 30, 44 28, 44 20 
                C44 12, 40 4, 32 2 Z" />
       <!-- Left ear -->
-      <circle cx="24" cy="10" r="3" />
-      <!-- Right ear -->
-      <circle cx="40" cy="10" r="3" />
-      <!-- Left paw -->
-      <circle cx="28" cy="48" r="2" />
-      <!-- Right paw -->
-      <circle cx="36" cy="48" r="2" />
-    </svg>
-  </div>
-
-<script>
-  const hamster = document.getElementById('hamster');
-  let floating = false;
-  let floatInterval = null;
-  let
+      <circle cx="24"
