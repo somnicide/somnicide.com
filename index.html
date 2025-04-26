@@ -65,6 +65,13 @@
       height: 50px;
       opacity: 0.4;
       z-index: 2;
+      transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+      cursor: pointer;
+    }
+    .hamster:hover {
+      opacity: 0.8;
+      filter: drop-shadow(0 0 5px #FFD93D);
+      transform: scale(1.1);
     }
     .hamster svg {
       width: 100%;
