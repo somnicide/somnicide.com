@@ -78,32 +78,6 @@
       0% { transform: translateY(0px);}
       100% { transform: translateY(-20px);}
     }
-
-    /* --- Hamster Easter Egg --- */
-    .hamster {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      width: 60px;
-      height: 60px;
-      opacity: 0.4;
-      transition: opacity 0.3s ease, filter 0.3s ease;
-      z-index: 1;
-      cursor: pointer;
-    }
-
-    .hamster svg {
-      width: 100%;
-      height: 100%;
-      stroke: #FFD93D; /* Golden Popcorn Yellow */
-      stroke-width: 2;
-      fill: none;
-    }
-
-    .hamster.glowing {
-      opacity: 0.8;
-      filter: drop-shadow(0 0 8px #FFD93D);
-    }
   </style>
 </head>
 <body>
@@ -118,49 +92,6 @@
   <!-- Main Content -->
   <h1>Coming Soon</h1>
   <p>Stay tuned for something colorful, clever, and a little strange.</p>
-
-  <!-- Hamster -->
-  <div class="hamster" id="hamster">
-    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-      <path d="M32 2 
-               C24 4, 20 12, 20 20 
-               C20 28, 26 30, 26 40 
-               C26 50, 38 50, 38 40 
-               C38 30, 44 28, 44 20 
-               C44 12, 40 4, 32 2 Z" />
-      <circle cx="24" cy="10" r="3" />
-      <circle cx="40" cy="10" r="3" />
-      <circle cx="28" cy="48" r="2" />
-      <circle cx="36" cy="48" r="2" />
-    </svg>
-  </div>
-
-  <!-- Hamster Hover Script -->
-  <script>
-    const hamster = document.getElementById('hamster');
-    let floating = false;
-    let floatInterval = null;
-    let bottomPosition = 20; // Starting position
-
-    hamster.addEventListener('mouseenter', () => {
-      hamster.classList.add('glowing');
-      floating = true;
-      floatInterval = setInterval(() => {
-        if (floating) {
-          bottomPosition += 0.2; // Very slow upward movement
-          hamster.style.bottom = bottomPosition + 'px';
-        }
-      }, 50); // every 50ms
-    });
-
-    hamster.addEventListener('mouseleave', () => {
-      hamster.classList.remove('glowing');
-      floating = false;
-      clearInterval(floatInterval);
-      bottomPosition = 20;
-      hamster.style.bottom = bottomPosition + 'px';
-    });
-  </script>
 
 </body>
 </html>
