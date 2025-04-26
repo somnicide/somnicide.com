@@ -27,40 +27,24 @@
       font-size: 1.5rem;
       margin-bottom: 40px;
       color: #7C00C9;
-    }
-    .button {
-      background-color: #FF5E5B;
-      color: #121212;
-      text-decoration: none;
-      padding: 15px 30px;
-      font-size: 1rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .button:hover {
-      background-color: #FFD93D;
-      transform: scale(1.05);
+      max-width: 600px;
     }
     .sparkle {
       font-size: 2rem;
       color: #FFD93D;
-      animation: rotate 4s linear infinite;
-      margin-top: 30px;
+      animation: float 3s ease-in-out infinite alternate;
+      margin-top: 20px;
     }
-    @keyframes rotate {
-      0% { transform: rotate(0deg);}
-      100% { transform: rotate(360deg);}
+    @keyframes float {
+      0% { transform: translateY(0px);}
+      100% { transform: translateY(-10px);}
     }
   </style>
 </head>
 <body>
 
   <h1>Coming Soon</h1>
-  <p>Stay tuned for fun, strange, and slightly chaotic adventures.</p>
-  <a href="#" class="button">Follow the Hamsters</a>
+  <p>Our next adventure is taking shape. Stay tuned for something colorful, clever, and unlike anything you've seen before.</p>
   <div class="sparkle">✨</div>
 
 </body>
