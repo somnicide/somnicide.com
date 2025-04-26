@@ -65,13 +65,8 @@
       height: 60px;
       opacity: 0.4;
       z-index: 2;
-      transition: transform 1s ease, filter 0.5s ease, opacity 0.5s ease;
+      transition: filter 0.3s ease, opacity 0.3s ease;
       cursor: pointer;
-    }
-    .hamster:hover {
-      opacity: 0.8;
-      filter: drop-shadow(0 0 5px #FFD93D);
-      transform: translateY(-20px) scale(1.15);
     }
     .hamster svg {
       width: 100%;
@@ -96,7 +91,7 @@
     <p>Our world is forming.<br>Stay tuned for something colorful, clever, and just a little strange.</p>
   </div>
 
-  <div class="hamster">
+  <div class="hamster" id="hamster">
     <!-- Proper hamster outline as SVG -->
     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
       <!-- Hamster head and body outline -->
@@ -117,5 +112,8 @@
     </svg>
   </div>
 
-</body>
-</html>
+<script>
+  const hamster = document.getElementById('hamster');
+  let floating = false;
+  let floatInterval = null;
+  let
