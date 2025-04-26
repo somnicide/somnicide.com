@@ -9,45 +9,48 @@
       background-color: #121212;
       color: #00C2FF;
       font-family: 'Arial', sans-serif;
-      text-align: center;
-      padding: 0;
       margin: 0;
+      padding: 0;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
     }
     h1 {
       font-size: 4rem;
       margin-bottom: 20px;
+      color: #00C2FF;
     }
     p {
       font-size: 1.5rem;
-      color: #7C00C9;
       margin-bottom: 40px;
+      color: #7C00C9;
     }
     .button {
-      background-color: #FFD93D;
+      background-color: #FF5E5B;
       color: #121212;
-      border: none;
+      text-decoration: none;
       padding: 15px 30px;
       font-size: 1rem;
+      font-weight: bold;
+      border: none;
       border-radius: 50px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
     .button:hover {
-      background-color: #FFEB3B;
+      background-color: #FFD93D;
+      transform: scale(1.05);
     }
     .sparkle {
       font-size: 2rem;
       color: #FFD93D;
-      animation: spin 3s linear infinite;
-      margin-top: 20px;
+      animation: rotate 4s linear infinite;
+      margin-top: 30px;
     }
-    @keyframes spin {
+    @keyframes rotate {
       0% { transform: rotate(0deg);}
       100% { transform: rotate(360deg);}
     }
@@ -56,7 +59,7 @@
 <body>
 
   <h1>Coming Soon</h1>
-  <p>Stay tuned for something fun and strange.</p>
+  <p>Stay tuned for fun, strange, and slightly chaotic adventures.</p>
   <a href="#" class="button">Follow the Hamsters</a>
   <div class="sparkle">✨</div>
 
