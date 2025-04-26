@@ -45,34 +45,10 @@
       opacity: 0.15;
       animation: float 10s infinite ease-in-out alternate;
     }
-    .circle.blue {
-      background-color: #00C2FF;
-      width: 200px;
-      height: 200px;
-      top: 10%;
-      left: 20%;
-    }
-    .circle.coral {
-      background-color: #FF5E5B;
-      width: 150px;
-      height: 150px;
-      bottom: 15%;
-      right: 25%;
-    }
-    .circle.yellow {
-      background-color: #FFD93D;
-      width: 100px;
-      height: 100px;
-      top: 70%;
-      left: 10%;
-    }
-    .circle.purple {
-      background-color: #7C00C9;
-      width: 120px;
-      height: 120px;
-      top: 30%;
-      right: 15%;
-    }
+    .circle.blue { background-color: #00C2FF; width: 200px; height: 200px; top: 10%; left: 20%; }
+    .circle.coral { background-color: #FF5E5B; width: 150px; height: 150px; bottom: 15%; right: 25%; }
+    .circle.yellow { background-color: #FFD93D; width: 100px; height: 100px; top: 70%; left: 10%; }
+    .circle.purple { background-color: #7C00C9; width: 120px; height: 120px; top: 30%; right: 15%; }
     @keyframes float {
       0% { transform: translateY(0px);}
       100% { transform: translateY(-20px);}
@@ -80,6 +56,22 @@
     .content {
       position: relative;
       z-index: 1;
+    }
+    .hamster {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      opacity: 0.4;
+      z-index: 2;
+    }
+    .hamster svg {
+      width: 100%;
+      height: 100%;
+      stroke: #FFD93D;
+      stroke-width: 2;
+      fill: none;
     }
   </style>
 </head>
@@ -95,6 +87,16 @@
   <div class="content">
     <h1>Coming Soon</h1>
     <p>Our world is forming.<br>Stay tuned for something colorful, clever, and just a little strange.</p>
+  </div>
+
+  <div class="hamster">
+    <!-- Simple abstract hamster outline as SVG -->
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="30" />
+      <circle cx="22" cy="22" r="5" />
+      <circle cx="42" cy="22" r="5" />
+      <path d="M20 42 C28 52, 36 52, 44 42" />
+    </svg>
   </div>
 
 </body>
